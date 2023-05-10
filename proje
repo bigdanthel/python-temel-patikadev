@@ -1,0 +1,21 @@
+# soru_1
+
+def flatten_list(fl):
+    flattened = []
+    for item in fl:
+        if isinstance(item, list):
+            flattened.extend(flatten_list(item))
+        else:
+            flattened.append(item)
+    return flattened
+
+# soru_2
+
+def reverse_list(rv):
+    reversed_lst = []
+    for item in rv:
+        if isinstance(item, list):
+            reversed_lst.append(reverse_list(item))
+        else:
+            reversed_lst.append(item)
+    return list(reversed(reversed_lst))
